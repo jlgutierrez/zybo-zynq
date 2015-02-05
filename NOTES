@@ -1,6 +1,8 @@
 bin/ folder contains the necessary files for Zybo SD Boot.
 In case you want to generate the files on your own, follow the next steps: 
 
+First of all, run download_all.sh script, it will download all documentation and necessary files to proceed.
+
 1º) U-boot
 $ git clone https://github.com/DigilentInc/u-boot-Digilent-Dev.git
 $ make ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- zynq_zybo
@@ -15,3 +17,7 @@ $ make ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- UIMAGE_LOADADDR=0x8000 u
 
 3º) Device-Tree
 $ dtc -I dts -O dtb -o devicetree.dtb zynq-zybo.dts
+
+NOTE: I suggest to follow Embedded_Linux_Hands-on_Tutorial.pdf
+
+
