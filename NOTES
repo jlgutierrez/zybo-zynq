@@ -5,6 +5,7 @@ First of all, run download_all.sh script, it will download all documentation and
 
 1º) U-boot
 $ git clone https://github.com/DigilentInc/u-boot-Digilent-Dev.git
+$ git checkout master-next
 $ make ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- zynq_zybo
 $ make ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi-
 $ cp u-boot u-boot.elf
