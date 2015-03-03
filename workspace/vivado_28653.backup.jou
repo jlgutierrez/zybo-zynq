@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Thu Feb  5 18:01:44 2015
+# Process ID: 28569
+# Log file: /home/jlgutierrez/Development/zybo-zynq/workspace/vivado.log
+# Journal file: /home/jlgutierrez/Development/zybo-zynq/workspace/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project zybo_base_system/source/vivado/hw/zybo_bsd/zybo_bsd.xpr
+open_bd_design {/home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/zybo_bsd/zybo_bsd.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_cells myLED_0]
+save_bd_design

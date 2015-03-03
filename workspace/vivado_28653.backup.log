@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Thu Feb  5 18:01:44 2015
+# Process ID: 28569
+# Log file: /home/jlgutierrez/Development/zybo-zynq/workspace/vivado.log
+# Journal file: /home/jlgutierrez/Development/zybo-zynq/workspace/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project zybo_base_system/source/vivado/hw/zybo_bsd/zybo_bsd.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/ip_repo/myLED_1.0'.
+WARNING: [IP_Flow 19-2207] Repository '/home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/ip_repo/myLED_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/ip_repo/myLED_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/lib'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+WARNING: [BD 41-1303] One or more IPs have been locked in the design 'system.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 5797.570 ; gain = 132.992 ; free physical = 431 ; free virtual = 22557
+open_bd_design {/home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/zybo_bsd/zybo_bsd.srcs/sources_1/bd/system/system.bd}
+Adding component instance block -- Digilent:digilent:axi_dispctrl:1.0 - axi_dispctrl_0
+Adding component instance block -- Digilent:digilent:axi_dispctrl:1.0 - axi_dispctrl_1
+Adding component instance block -- analogdeviceinc.com:adi:axi_i2s_adi:1.0 - axi_i2s_adi_1
+Adding component instance block -- digilentinc.com:digilent:hdmi_tx:1.0 - hdmi_tx_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - BTNs_4Bits
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - SWs_4Bits
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_0
+Adding component instance block -- xilinx.com:ip:axi_vdma:6.2 - axi_vdma_0
+Adding component instance block -- xilinx.com:ip:axi_vdma:6.2 - axi_vdma_1
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - ground
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - vdd
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- Digilent:user:myLED:1.0 - myLED_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m07_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m06_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m05_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m04_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m03_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m02_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m01_regslice
+Adding component instance block -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Successfully read diagram <system> from BD file </home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/zybo_bsd/zybo_bsd.srcs/sources_1/bd/system/system.bd>
+delete_bd_objs [get_bd_cells myLED_0]
+save_bd_design
+Wrote  : </home/jlgutierrez/Development/zybo-zynq/workspace/zybo_base_system/source/vivado/hw/zybo_bsd/zybo_bsd.srcs/sources_1/bd/system/system.bd> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Feb  5 18:02:23 2015...

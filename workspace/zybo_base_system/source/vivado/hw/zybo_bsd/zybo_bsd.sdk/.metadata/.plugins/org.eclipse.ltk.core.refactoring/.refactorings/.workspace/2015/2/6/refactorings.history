@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;fsbl/Debug/fsbl.elf&apos;" deleteContents="false" description="Delete resource &apos;fsbl/Debug/fsbl.elf&apos;" element1="/fsbl/Debug/fsbl.elf" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1423158383817"/>
+</session>
