@@ -101,9 +101,9 @@ else
 			git clone git://git.buildroot.net/buildroot
 
 			echo -e "\e[42mAdding zenboard configuration files\033[0m"
-			cp config/zenboard_defconfig buildroot/configs/zenboard_defconfig
+			cp config/zyboboard_defconfig buildroot/configs/zyboboard_defconfig
 			cd buildroot/
-			make zenboard_defconfig
+			make zyboboard_defconfig
 			cp ../config/br2_linux_filesystem_config ./.config
 			make
 			cd ..
