@@ -20,11 +20,11 @@ echo "     Use this to compile:
 	- download Xilinx Device Tree BSP for SDK"
 echo "####################################################"
 
-: ${ARCH?"Need to set ARCH=arm"; exit;}
-: ${CROSS_COMPILE:?"Need to set CROSS_COMPILE with your cross compiler for arm"; exit;}
+ARCH=arm
+CROSS_COMPILE=${PWD}/buildroot/output/host/usr/bin/arm-linux-
 
-folder=${PWD##*/} 
-         
+folder=${PWD##*/}
+
 if [ "$1" == "help" ] || [ "$1" == "" ];
 then
 	echo "Help menu:"
@@ -43,13 +43,45 @@ then
 	echo "Please cd to $expected_folder and re-run $script_name"
 else
 
+	if  [ "$1" == "all" ] || [ "$1" == "buildroot" ];
+	then
+		#Buildroot
+		if [ ! -d $buildroot_folder ];
+		then
+			echo -e "\e[42mCloning buildroot repository\033[0m"
+			git clone git://git.buildroot.net/buildroot
+			cd buildroot/			
+			git checkout 2015.05
+			cd ..
+
+			echo -e "\e[42mAdding zenboard configuration files\033[0m"
+			cp config/zyboboard_defconfig buildroot/configs/zyboboard_defconfig
+			cd buildroot/
+			make zyboboard_defconfig
+			cp ../config/br2_linux_filesystem_config ./.config
+			make
+			cd ..
+			echo -e "\e[42mBuildroot finished!\033[0m"
+		else
+			echo -e "\e[42mCompiling buildroot\033[0m"
+			cd buildroot/
+			make
+			echo -e "\e[42mBuildroot finished!\033[0m"
+			cd ..
+		fi
+
+		echo -e "\e[42mCopying files to $SD_folder \033[0m"
+		sh build/create_sd_files.sh
+		#end buildroot
+	fi
+
 	if [ "$1" == "devicetree" ];
 	then
 		git clone https://github.com/Xilinx/device-tree-xlnx.git
 		echo -e "\e[42mDevice Tree BSP for SDK ready to use!\033[0m"
 		echo -e "\e[42mPlease add it to your SDK BSP Repository!\033[0m"
 	fi
-	
+
 	if  [ "$1" == "clean" ];
 	then
 		cd u-boot-Digilent-Dev/
@@ -60,7 +92,7 @@ else
 		cd ..
 		echo -e "\e[42mU-boot and Buildroot folders cleaned!\033[0m"
 	fi
-	
+
 	if [ "$1" == "remove" ];
 	then
 		rm -rf buildroot/
@@ -91,36 +123,7 @@ else
 		fi
 		#end u-boot
 	fi
-	
-	if  [ "$1" == "all" ] || [ "$1" == "buildroot" ];
-	then
-		#Buildroot
-		if [ ! -d $buildroot_folder ];
-		then
-			echo -e "\e[42mCloning buildroot repository\033[0m"
-			git clone git://git.buildroot.net/buildroot
 
-			echo -e "\e[42mAdding zenboard configuration files\033[0m"
-			cp config/zyboboard_defconfig buildroot/configs/zyboboard_defconfig
-			cd buildroot/
-			make zyboboard_defconfig
-			cp ../config/br2_linux_filesystem_config ./.config
-			make
-			cd ..
-			echo -e "\e[42mBuildroot finished!\033[0m"
-		else
-			echo -e "\e[42mCompiling buildroot\033[0m"
-			cd buildroot/
-			make
-			echo -e "\e[42mBuildroot finished!\033[0m"
-			cd ..
-		fi
-
-		echo -e "\e[42mCopying files to $SD_folder \033[0m"
-		sh build/create_sd_files.sh
-		#end buildroot
-	fi
-	
 	if  [ ! "$1" == "all" ] && [ ! "$1" == "buildroot" ] && [ ! "$1" == "uboot" ] && [ ! "$1" == "clean" ] && [ ! "$1" == "remove" ] && [ ! "$1" == "devicetree" ];
 	then
 		echo -e "\033[0;31mWrong Parameters!\033[0m"
